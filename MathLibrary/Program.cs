@@ -23,8 +23,29 @@ namespace MathLibrary
             Console.WriteLine(Math.Round(4.7m)); //Çıktı : 5 
 
 
+            Kontrol(-14);
+            Kontrol(78);
+            Kontrol(0);
+
 
             Console.Read();
+        }
+
+        public static void Kontrol(int sayi)
+        {
+            var sonuc = Math.Sign(sayi);
+            switch (sonuc)
+            {
+                case -1:
+                    Console.WriteLine("Sayı negatif");
+                    break;
+                case 0:
+                    Console.WriteLine("Sayı sıfır");
+                    break;
+                case 1:
+                    Console.WriteLine("Sayı pozitif");
+                    break;
+            }
         }
     }
 }
