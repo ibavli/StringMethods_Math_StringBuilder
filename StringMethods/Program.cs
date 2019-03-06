@@ -164,6 +164,20 @@ namespace StringMethods
             Console.Write("Soyadınız".PadRight(15, '.'));
             Console.WriteLine("bavlı");
 
+
+
+
+            Console.WriteLine();
+            Console.WriteLine("Pad işlemleri");
+            string foo = "Foo";
+            string paddedLeft = foo.PadLeft(5);
+            string paddedRight = foo.PadRight(6, '+');
+            string noPadded = foo.PadLeft(2);
+
+            Console.WriteLine(paddedLeft);
+            Console.WriteLine(paddedRight);
+            Console.WriteLine(noPadded);
+
             Console.ReadLine();
         }
     }
