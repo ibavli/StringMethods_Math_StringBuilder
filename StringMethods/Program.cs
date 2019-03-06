@@ -178,6 +178,62 @@ namespace StringMethods
             Console.WriteLine(paddedRight);
             Console.WriteLine(noPadded);
 
+
+            //Checking for empty String using String.IsNullOrEmpty() and String.IsNullOrWhiteSpace()
+            string nullString = null;
+            string emptyString = "";
+            string whitespaceString = "    ";
+            string tabString = "\t";
+            string newlineString = "\n";
+            string nonEmptyString = "abc123";
+
+            bool result;
+            result = String.IsNullOrEmpty(nullString);            // true
+            result = String.IsNullOrEmpty(emptyString);           // true
+            result = String.IsNullOrEmpty(whitespaceString);      // false
+            result = String.IsNullOrEmpty(tabString);             // false
+            result = String.IsNullOrEmpty(newlineString);         // false
+            result = String.IsNullOrEmpty(nonEmptyString);        // false
+
+            result = String.IsNullOrWhiteSpace(nullString);       // true
+            result = String.IsNullOrWhiteSpace(emptyString);      // true
+            result = String.IsNullOrWhiteSpace(tabString);        // true
+            result = String.IsNullOrWhiteSpace(newlineString);    // true
+            result = String.IsNullOrWhiteSpace(whitespaceString); // true
+            result = String.IsNullOrWhiteSpace(nonEmptyString);   // false 
+
+
+            int intValue = 10;
+            string zeroPaddedInteger = intValue.ToString("000"); // Output will be "010"
+            string customFormat = intValue.ToString("Input value is 0"); // output will be   "Input value is 10"
+
+            double doubleValue = 10.456;
+            string doubleroundedDouble = doubleValue.ToString("0.00"); // output 10.46
+            string doubleintegerPart = doubleValue.ToString("00");    // output 10
+            string doublecustomFormat = doubleValue.ToString("Input value is 0.0");  // Input value is 10.5
+
+            // Determine whether a string begins with a given sequence
+            string HelloWorld = "Hello World";
+            HelloWorld.StartsWith("Hello"); // true
+            HelloWorld.StartsWith("Foo"); // false
+
+
+            string s = "Hello World";
+            bool stringExists = s.Contains("ello");  //stringExists =true as the string contains the substring 
+
+            //Joining an array of strings into a new one
+            var parts = new[] { "Foo", "Bar", "Fizz", "Buzz" };
+            var joined = string.Join(", ", parts);
+
+
+            string s2 = "Hello World";
+            s2 = s2.Replace("ell", String.Empty); // s = "Ho World" 
+
+
+            string s3 = "My String";
+            s3 = s3.ToLowerInvariant(); // "my string"
+            s3 = s3.ToUpperInvariant(); // "MY STRING"
+
             Console.ReadLine();
         }
     }
