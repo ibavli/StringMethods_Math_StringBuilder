@@ -29,8 +29,16 @@ namespace StringMethods
             Console.WriteLine(BoslukOlanCumle.TrimEnd());
 
             string cumle = "a!bcnx";
-            Console.WriteLine(cumle.Trim('a', '!')); ; //cumle değişkeninde başta ve sonra bırakılan boşlukları temizler.Bu şekilde char dizisi tanımlanır ve bu yukarıda bulunan karakterlerin başta ve sonda olmasını engeller. Tek tırnak engellemek için başına \ ters slash kullanılarak yazılır. \' şeklinde tek tırnak engellenir.   
+            Console.WriteLine(cumle.Trim('a', '!')); ; //cumle değişkeninde başta ve sonra bırakılan boşlukları temizler.Bu şekilde char dizisi tanımlanır ve bu yukarıda bulunan karakterlerin başta ve sonda olmasını engeller. Tek tırnak engellemek için başına \ ters slash kullanılarak yazılır. \' şeklinde tek tırnak engellenir. 
+            
+            string q = "{(Merhaba!*";
+            string r = q.Trim('(', '*', '{'); // "Merhaba!"
+            Console.WriteLine(r);
 
+            string q2 = "{{(Merhaba**";
+            q2 = q2.TrimStart('{');
+            q2 = q2.TrimEnd( '*' );
+            Console.WriteLine(q2); //  (Merhaba
 
             /*
              Equals Metodu Eşitlik sorgulaması yapar verilen iki string ifadenin birbirine eşit olup olmadığını kontrol eder. Eşitlik durumu sonucunda boolean değer döner. Boolean değeri kullanarak bu metodu karar yapılarımız içinde kullanabiliriz. 
@@ -117,6 +125,9 @@ namespace StringMethods
             {
                 Console.WriteLine(item);
             }
+            string str = "erkek--gunluk--a--spor--ayakkabi";
+            string[] tokens = str.Split(new[] { "--" }, StringSplitOptions.None);
+            //[ "this", "is", "a", "complete", "sentence" ]
 
             Console.WriteLine();
 
@@ -233,6 +244,19 @@ namespace StringMethods
             string s3 = "My String";
             s3 = s3.ToLowerInvariant(); // "my string"
             s3 = s3.ToUpperInvariant(); // "MY STRING"
+
+
+
+            //String.join
+            string virgul = ",";
+            char[] harflerim = new[] { 'a', 'b', 'c' };
+            string inputString = String.Join(virgul, harflerim);
+            Console.WriteLine(inputString);
+
+            string bosluk = " ";
+            List<string> isimListesi = new List<string>() { "Ali", "bir", "isimdir" };
+            string yeniHali = String.Join(bosluk, isimListesi);
+            Console.WriteLine(yeniHali);
 
             Console.ReadLine();
         }
